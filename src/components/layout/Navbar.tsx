@@ -59,7 +59,7 @@ export const Navbar: React.FC = () => {
             
             {/* Minimal section links for quick access */}
             <span className="hidden md:inline text-xs font-mono text-zinc-500 dark:text-zinc-400">
-              {settings.tagline || "digital garden & notebook"}
+              {settings.tagline || "Vaibhav's Brain"}
             </span>
           </div>
 

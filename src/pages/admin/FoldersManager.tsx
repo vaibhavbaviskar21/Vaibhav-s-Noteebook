@@ -57,7 +57,7 @@ export const FoldersManager: React.FC = () => {
 
   const handleDeleteSection = async (id: string, sName: string) => {
     if (sections.length <= 1) {
-      alert("The digital garden requires at least one namespace branch to route postings.");
+      alert("Vaibhav's Brain requires at least one namespace branch to route postings.");
       return;
     }
     if (!confirm(`Are you sure you want to delete section "${sName}"? Child folders and posts inside this category will remain available elsewhere.`)) return;

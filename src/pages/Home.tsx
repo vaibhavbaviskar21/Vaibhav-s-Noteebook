@@ -35,7 +35,7 @@ export const Home: React.FC = () => {
     return (
       <div className="min-h-[60vh] flex flex-col items-center justify-center gap-3 font-mono text-xs text-zinc-400 dark:text-zinc-600">
         <div className="h-7 w-7 border-2 border-indigo-500 border-t-transparent rounded-full animate-spin"></div>
-        <span>Opening Digital Garden Workspace...</span>
+        <span>Loading Vaibhav's Brain...</span>
       </div>
     );
   }
@@ -185,7 +185,7 @@ export const Home: React.FC = () => {
               <span>Interactive Mind Map & Connection Graph</span>
             </h2>
             <p className="text-xs text-zinc-500 dark:text-zinc-450 mt-1 font-serif">
-              A dynamic, reactive node diagram plotting the underlying associations and references between digital garden notes.
+              A dynamic, reactive node diagram plotting the underlying associations and references between notes in Vaibhav's Brain.
             </p>
           </div>
           <button

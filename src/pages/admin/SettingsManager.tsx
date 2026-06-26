@@ -24,7 +24,7 @@ export const SettingsManager: React.FC = () => {
   useEffect(() => {
     if (settings) {
       setTitle(settings.title || "Vaibhav's Brain");
-      setTagline(settings.tagline || "Where personal notebooks meet a streamlined blogging digital garden.");
+      setTagline(settings.tagline || "A personal space to write, think and build in public.");
       setBio(settings.bio || "Sovereign knowledge backplane tracking computer science, research, project logs, and CTFs.");
       setTwitter(settings.twitter || "");
       setGithub(settings.github || "");
@@ -72,7 +72,7 @@ export const SettingsManager: React.FC = () => {
     setIsSeeding(true);
     try {
       await seedDatabase();
-      alert("Digital garden loaded with default notebooks successfully!");
+      alert("Vaibhav's Brain loaded with default notebooks successfully!");
     } catch (err) {
       alert("Seeding process failed.");
     } finally {
@@ -141,7 +141,7 @@ export const SettingsManager: React.FC = () => {
               <label className="font-bold text-zinc-500 block">Tageline summary statement</label>
               <input
                 type="text"
-                placeholder="Where personal notebooks meet a streamlined blogging digital garden."
+                placeholder="A personal space to write, think and build in public."
                 value={tagline}
                 onChange={(e) => setTagline(e.target.value)}
                 className="w-full text-xs font-medium rounded-lg border border-zinc-200 dark:border-zinc-805 bg-white dark:bg-zinc-900 px-3 py-2 text-zinc-900 dark:text-zinc-100 focus:ring-1 focus:ring-indigo-500"
@@ -209,7 +209,7 @@ export const SettingsManager: React.FC = () => {
             </h3>
 
             <p className="text-[11px] text-zinc-400 dark:text-zinc-500 leading-relaxed font-sans">
-              Is your workspace empty? Instantly populate the Digital Garden with structured folders, DSA trees, CTF code, and related links. This builds the connections needed to test the graph view right away.
+              Is your workspace empty? Instantly populate Vaibhav's Brain with structured folders, DSA trees, CTF code, and related links. This builds the connections needed to test the graph view right away.
             </p>
 
             <button
@@ -219,7 +219,7 @@ export const SettingsManager: React.FC = () => {
               className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-dashed border-[#10b981] text-[#10b981] hover:bg-[#10b981]/5 hover:border-[#10b981] font-bold text-xs shadow-sm transition-all cursor-pointer bg-transparent disabled:opacity-50"
             >
               {isSeeding ? <RotateCw className="h-4 w-4 animate-spin" /> : <Database className="h-4 w-4" />}
-              <span>Populate Digital Garden</span>
+              <span>Populate Vaibhav's Brain</span>
             </button>
           </div>
 

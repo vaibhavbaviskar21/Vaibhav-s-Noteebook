@@ -149,7 +149,7 @@ export async function seedDatabase(force = false) {
     const defaultSettings: SiteSettings = {
       id: "site",
       title: "Vaibhav's Brain",
-      tagline: "A minimalist digital garden and personal knowledge base.",
+      tagline: "A personal space to write, think and build in public.",
       twitter: "https://twitter.com/vaibhav",
       github: "https://github.com/vaibhav",
       linkedin: "https://linkedin.com/in/vaibhav",
@@ -304,7 +304,7 @@ export async function getSiteSettings(): Promise<SiteSettings> {
     return {
       id: "site",
       title: "Vaibhav's Brain",
-      tagline: "A minimalist digital garden and personal knowledge base.",
+      tagline: "A personal space to write, think and build in public.",
     };
   } catch (err) {
     handleSupabaseError(err, "GET", "settings/site");

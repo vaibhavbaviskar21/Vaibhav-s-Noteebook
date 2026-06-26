@@ -28,7 +28,7 @@ export const SearchView: React.FC = () => {
     return (
       <div className="min-h-[60vh] flex flex-col items-center justify-center gap-3 font-mono text-xs text-zinc-400 dark:text-zinc-650 animate-pulse">
         <div className="h-6 w-6 border-2 border-indigo-500 border-t-transparent rounded-full animate-spin"></div>
-        <span>Indexing digital garden files...</span>
+        <span>Indexing Vaibhav's Brain notes...</span>
       </div>
     );
   }
