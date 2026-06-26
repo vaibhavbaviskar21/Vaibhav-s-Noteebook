@@ -1,6 +1,6 @@
 /**
- * Curated daily insights — real quotes from famous figures in security,
- * engineering, and technology. Rotates daily based on day-of-year seed.
+ * Curated motivational quotes from famous leaders, engineers, entrepreneurs,
+ * and thinkers. Rotates daily based on day-of-year seed.
  */
 
 export interface DailyThought {
@@ -12,184 +12,190 @@ export interface DailyThought {
 
 export const TECH_THOUGHTS: DailyThought[] = [
   {
-    quote: "Security is always excessive until it's not enough.",
-    author: "Robbie Sinclair",
-    role: "Head of Security, Country Energy",
-    context: "The cost of a security breach — data loss, reputation damage, legal liability — almost always dwarfs the cost of the controls that could have prevented it. Over-engineering security is rarely the mistake companies regret."
+    quote: "The people who are crazy enough to think they can change the world are the ones who do.",
+    author: "Steve Jobs",
+    role: "Co-founder, Apple",
+    context: "Every great product, every breakthrough idea, every open-source project started with someone bold enough to believe it was possible. You don't need permission to build something that matters."
   },
   {
-    quote: "The only truly secure system is one that is powered off, cast in a block of concrete and sealed in a lead-lined room with armed guards.",
-    author: "Gene Spafford",
-    role: "Cybersecurity Pioneer, Purdue University",
-    context: "Absolute security is a myth. Every system that does useful work has an attack surface. The goal is to make exploitation harder than it's worth for the adversary — not to eliminate risk entirely."
+    quote: "It does not matter how slowly you go as long as you do not stop.",
+    author: "Confucius",
+    role: "Chinese Philosopher",
+    context: "Consistency beats intensity. One commit a day, one concept mastered per week, one project shipped per month — the compound effect of showing up every day is what separates those who make it from those who almost did."
   },
   {
-    quote: "Amateurs hack systems, professionals hack people.",
-    author: "Bruce Schneier",
-    role: "Cryptographer & Security Technologist",
-    context: "Social engineering remains the most effective attack vector in existence. Phishing, pretexting, and vishing bypass the most hardened technical controls because humans are consistently the weakest link."
+    quote: "Whether you think you can, or you think you can't — you're right.",
+    author: "Henry Ford",
+    role: "Founder, Ford Motor Company",
+    context: "Mindset is the real bottleneck. The engineer who believes they can debug a complex system will. The student who believes placement is achievable will prepare accordingly. Your belief defines your ceiling."
   },
   {
-    quote: "If you think technology can solve your security problems, then you don't understand the problems and you don't understand the technology.",
-    author: "Bruce Schneier",
-    role: "Cryptographer & Security Technologist",
-    context: "Firewalls, IDS, and encryption are tools, not solutions. Security is a process — threat modeling, policy, training, incident response, and culture matter more than any single product purchase."
+    quote: "The secret of getting ahead is getting started.",
+    author: "Mark Twain",
+    role: "Author & Humorist",
+    context: "Analysis paralysis is real. The project you've been planning for three months needs one thing: a first commit. A bad first draft is infinitely better than a perfect idea that never ships."
   },
   {
-    quote: "Privacy is not something that I'm merely entitled to, it's an absolute prerequisite.",
-    author: "Marlon Brando",
-    role: "Actor & Cultural Icon",
-    context: "In the digital age, privacy is foundational to freedom. Systems that collect more data than they need create liability for users and operators alike. Data minimization is not optional — it's ethical engineering."
+    quote: "I have not failed. I've just found 10,000 ways that won't work.",
+    author: "Thomas Edison",
+    role: "Inventor, Entrepreneur",
+    context: "Every bug you fix teaches you something. Every rejected PR, every failed interview, every broken deployment is data — not defeat. Persistence with reflection is how expertise is built."
   },
   {
-    quote: "The Internet is a reflection of our society and that mirror is going to be reflecting what we see. If we do not like what we see in that mirror the problem is not to fix the mirror, we have to fix the society.",
-    author: "Vint Cerf",
-    role: "Co-inventor of TCP/IP, 'Father of the Internet'",
-    context: "Online harms — from disinformation to abuse — are human problems that technical systems amplify. Engineers bear responsibility for the social consequences of the systems they build."
+    quote: "In the middle of every difficulty lies opportunity.",
+    author: "Albert Einstein",
+    role: "Theoretical Physicist, Nobel Laureate",
+    context: "The hardest problems in your codebase, your career, and your life are the ones worth solving. Difficulty is a filter — most people stop there. The ones who push through find the real rewards."
   },
   {
-    quote: "Cryptography is the ultimate form of non-violent direct action.",
-    author: "Julian Assange",
-    role: "Publisher, WikiLeaks",
-    context: "Strong encryption gives individuals power that no government or corporation can override with policy alone. Building and deploying cryptography correctly is an act of protecting human rights at scale."
+    quote: "Your time is limited, so don't waste it living someone else's life.",
+    author: "Steve Jobs",
+    role: "Co-founder, Apple",
+    context: "Build what you believe in. Write about what excites you. Work on problems that keep you up at night. A career built on your own curiosity and conviction will always outrun one built on imitation."
   },
   {
-    quote: "There are two kinds of cryptography in this world: cryptography that will stop your kid sister from reading your files, and cryptography that will stop major governments from reading your files.",
-    author: "Bruce Schneier",
-    role: "Cryptographer & Security Technologist",
-    context: "Most consumer security is theater. Real cryptographic protection requires correct implementation, proper key management, and a threat model that accounts for the adversary's actual capabilities."
+    quote: "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+    author: "Winston Churchill",
+    role: "Prime Minister of the United Kingdom",
+    context: "One good placement doesn't end the journey. One bad interview doesn't end the career. What matters is whether you get up, adjust, and try again — with more knowledge than you had before."
   },
   {
-    quote: "The art of war teaches us to rely not on the likelihood of the enemy not coming, but on our own readiness to receive him.",
-    author: "Sun Tzu",
-    role: "Military Strategist, The Art of War",
-    context: "Assume breach. Security posture built around prevention alone collapses the moment a novel attack appears. Detection, response, and recovery are equally critical pillars of any mature security program."
+    quote: "The best time to plant a tree was 20 years ago. The second best time is now.",
+    author: "Chinese Proverb",
+    role: "Ancient Wisdom",
+    context: "You can't go back and start learning data structures, building projects, or writing online six months ago. But you can start today. The gap between where you are and where you want to be closes one day at a time."
   },
   {
-    quote: "Never underestimate the determination of a kid who is time-rich and cash-poor.",
-    author: "Cory Doctorow",
-    role: "Author & Digital Rights Activist",
-    context: "Some of the most significant security breaches in history were carried out not by nation-states but by teenagers with time and curiosity. Threat models must account for motivated, low-resource adversaries."
+    quote: "Strive not to be a success, but rather to be of value.",
+    author: "Albert Einstein",
+    role: "Theoretical Physicist, Nobel Laureate",
+    context: "The engineers and builders who endure are not those who chased metrics — they are those who genuinely solved problems for real people. Value creation is the only sustainable foundation for a technical career."
   },
   {
-    quote: "Complexity is the enemy of security.",
-    author: "Bruce Schneier",
-    role: "Cryptographer & Security Technologist",
-    context: "Every abstraction layer, every third-party dependency, every configuration option is a potential vulnerability surface. The most secure systems are deliberately minimal. Simple is auditable; complex is not."
+    quote: "You miss 100% of the shots you don't take.",
+    author: "Wayne Gretzky",
+    role: "Ice Hockey Legend",
+    context: "Apply for the role that intimidates you. Open-source the project you think isn't good enough. Publish the blog post you've been drafting for weeks. The cost of not trying is always higher than the cost of failing."
   },
   {
-    quote: "The Internet was designed for the flow of information, not for security.",
-    author: "Whitfield Diffie",
-    role: "Co-inventor of Public Key Cryptography",
-    context: "TCP/IP, HTTP, DNS, and SMTP were all designed in an era of trusted networks. Security was retrofitted, not built in. This architectural debt is why application-level security must compensate for insecure foundations."
+    quote: "The only way to do great work is to love what you do.",
+    author: "Steve Jobs",
+    role: "Co-founder, Apple",
+    context: "Passion is not a luxury in engineering — it's a competitive advantage. The developer who genuinely loves what they're building will outlearn, outship, and outlast the one who is just going through the motions."
   },
   {
-    quote: "In the world of cyber, you can be the biggest wolf or the smallest mouse — size doesn't matter, skill does.",
-    author: "James Scott",
-    role: "Senior Fellow, Institute for Critical Infrastructure Technology",
-    context: "A single skilled individual with the right exploit can compromise infrastructure serving millions. The asymmetry of offense vs. defense is what makes cybersecurity uniquely challenging as a field."
+    quote: "Believe you can and you're halfway there.",
+    author: "Theodore Roosevelt",
+    role: "26th President of the United States",
+    context: "Confidence is not arrogance — it is the reasonable belief that you can figure things out. That belief is the prerequisite for every hard problem you will ever solve."
   },
   {
-    quote: "Encryption works. Properly implemented strong crypto systems are one of the few things that you can rely on.",
-    author: "Edward Snowden",
-    role: "Whistleblower & Privacy Advocate",
-    context: "End-to-end encryption with forward secrecy is one of the strongest protections available to individuals. The problem is rarely the math — it's the implementation, key storage, and metadata that leak."
+    quote: "Don't watch the clock; do what it does. Keep going.",
+    author: "Sam Levenson",
+    role: "Author & Humorist",
+    context: "Deep work doesn't feel like progress in the moment. Grinding through a difficult algorithm, rewriting a messy module, or studying for an exam rarely feels rewarding until it's done. Keep going anyway."
   },
   {
-    quote: "The value of a man is not in his skin, that we should touch him.",
-    author: "Ralph Waldo Emerson",
-    role: "Philosopher & Essayist",
-    context: "Biometric data — fingerprints, facial geometry, iris scans — cannot be changed after a breach. Engineers who collect biometric data carry a lifelong responsibility to the people they authenticate."
+    quote: "It always seems impossible until it's done.",
+    author: "Nelson Mandela",
+    role: "Anti-apartheid Leader, Former President of South Africa",
+    context: "Every system you've built that works today looked impossibly complex before you started. Every skill you have now once felt out of reach. 'Impossible' is just a snapshot of where you are — not where you'll be."
   },
   {
-    quote: "Software bugs are not random events. They are deterministic artifacts of human cognition under pressure.",
-    author: "Gary McGraw",
-    role: "Software Security Pioneer",
-    context: "Security vulnerabilities are not bad luck — they are predictable consequences of design shortcuts, unclear requirements, and insufficient threat modeling. Building security in from the start is always cheaper than patching."
+    quote: "Hard work beats talent when talent doesn't work hard.",
+    author: "Tim Notke",
+    role: "Basketball Coach",
+    context: "Placement, open-source recognition, and career breakthroughs rarely go to the most naturally gifted — they go to the people who put in consistent, deliberate practice over years. Outwork the talented. Outsmart the hardworking."
   },
   {
-    quote: "You can't defend. You can't prevent. The only thing you can do is detect and respond.",
-    author: "Bruce Schneier",
-    role: "Cryptographer & Security Technologist",
-    context: "Perimeter security is dead. In a world of cloud, BYOD, and remote work, there is no clean inside/outside boundary. Zero-trust architecture — verify everything, assume nothing — is the only realistic model."
+    quote: "You are never too old to set another goal or to dream a new dream.",
+    author: "C.S. Lewis",
+    role: "Author & Scholar",
+    context: "Whether you're starting your first side project, switching domains, or going from frontend to security — there is no expiry date on ambition. The only thing standing between you and a new skill is the decision to learn it."
   },
   {
-    quote: "Hackers are breaking the systems for profit. Before, it was about intellectual curiosity and the pursuit of knowledge and thrill.",
-    author: "Kevin Mitnick",
-    role: "World's Most Famous Hacker turned Security Consultant",
-    context: "The threat landscape has evolved from curious teenagers to organized criminal enterprises and nation-state actors. Understanding adversary motivation is step one in building a proportionate defense."
+    quote: "The future belongs to those who believe in the beauty of their dreams.",
+    author: "Eleanor Roosevelt",
+    role: "Former First Lady of the United States",
+    context: "Every major technology company was once someone's dream dismissed as impractical. Every influential open-source project was once someone's side project. Dream with conviction, then engineer your way toward it."
   },
   {
-    quote: "I can show you how to pick a lock, but I can't teach you what it feels like when someone's privacy is violated.",
-    author: "Kevin Mitnick",
-    role: "World's Most Famous Hacker turned Security Consultant",
-    context: "Technical skill without ethics is dangerous. The hacker community's code of responsible disclosure exists because the harm of unauthorized access is real, regardless of the technical elegance of the exploit."
+    quote: "Excellence is not a destination; it is a continuous journey that never ends.",
+    author: "Brian Tracy",
+    role: "Author & Motivational Speaker",
+    context: "There is no point at which you become 'good enough' and stop growing. The best engineers, writers, and builders in the world are still learning, still shipping, still iterating. Excellence is a habit, not a trophy."
   },
   {
-    quote: "Privacy is a social good, a component of a truly human life.",
-    author: "Priscilla Regan",
-    role: "Professor of Government & Politics, GMU",
-    context: "When privacy erodes at scale — through surveillance capitalism or government monitoring — it changes how people behave, speak, and organize. Engineers building data-intensive systems carry social weight."
+    quote: "Do what you can, with what you have, where you are.",
+    author: "Theodore Roosevelt",
+    role: "26th President of the United States",
+    context: "You don't need a perfect setup, an elite college, or a senior mentor to start building. A laptop, an internet connection, and a curious mind are enough to ship something real. Start with what you have."
   },
   {
-    quote: "The problem with the internet is that the internet makes no distinction between signal and noise.",
-    author: "Eli Pariser",
-    role: "Author of The Filter Bubble",
-    context: "Misinformation, malware, and manipulation spread at the same speed as truth. Content authenticity, zero-trust information models, and provenance tracking are the next frontier of information security."
+    quote: "The biggest risk is not taking any risk.",
+    author: "Mark Zuckerberg",
+    role: "Co-founder & CEO, Meta",
+    context: "In a world where technology moves fast, playing it safe is the riskiest strategy of all. The safe choice — the familiar framework, the familiar role, the familiar city — often leads to the least interesting outcomes."
   },
   {
-    quote: "Security is mostly a superstition. Life is either a daring adventure or nothing at all.",
-    author: "Helen Keller",
-    role: "Author & Political Activist",
-    context: "In security engineering, paralysis from over-analysis is as dangerous as complacency. Shipping a secure-enough system beats never shipping a perfect one. Threat model, mitigate what matters, and iterate."
+    quote: "Push yourself, because no one else is going to do it for you.",
+    author: "Unknown",
+    role: "Timeless Wisdom",
+    context: "Motivation from outside is temporary. The discipline to open your IDE at midnight, to study when you're tired, to keep building when no one is watching — that comes from inside. Cultivate it like a skill."
   },
   {
-    quote: "We have to stop optimizing for programmers and start optimizing for users.",
-    author: "Jeff Atwood",
-    role: "Co-founder of Stack Overflow",
-    context: "Security UX is often the weakest link. Overly complex passwords, confusing permission dialogs, and buried privacy controls guarantee users will take the path of least resistance — which is rarely the secure path."
+    quote: "What you do today can improve all of your tomorrows.",
+    author: "Ralph Marston",
+    role: "Author & Publisher",
+    context: "Every pull request you write, every problem you solve, every note you publish compounds. The effort you put in today — even when it feels insignificant — is quietly building the foundation of who you'll be tomorrow."
   },
   {
-    quote: "The question is not if your organization will be hacked. The question is when — and whether you'll know.",
-    author: "Theresa Payton",
-    role: "Former White House CIO",
-    context: "Mean time to detect (MTTD) is often measured in months, not hours. Investing in detection and logging infrastructure — SIEM, anomaly detection, honeypots — is as important as hardening endpoints."
+    quote: "Act as if what you do makes a difference. It does.",
+    author: "William James",
+    role: "Philosopher & Psychologist, Harvard",
+    context: "A well-written blog post teaches someone. A clean open-source contribution saves hours for a stranger. Building in public creates the accountability to keep going. What you ship matters — more than you know."
   },
   {
-    quote: "The more I study, the more insatiable do I feel my genius for it to be.",
-    author: "Ada Lovelace",
-    role: "World's First Computer Programmer",
-    context: "Ada's curiosity exemplifies the right posture in security: the field changes constantly, and continuous learning is not optional. Every CVE, every breach post-mortem, every RFC update is a lesson in the art of attack and defense."
+    quote: "We may encounter many defeats but we must not be defeated.",
+    author: "Maya Angelou",
+    role: "Poet & Civil Rights Activist",
+    context: "A rejected pull request, a failed technical round, a project that never shipped — these are experiences, not sentences. The defeat is not in the outcome. The defeat is in choosing to stop."
   },
   {
-    quote: "There is no patch for human stupidity.",
-    author: "Kevin Mitnick",
-    role: "World's Most Famous Hacker turned Security Consultant",
-    context: "Security awareness training exists because policies alone don't change behavior. People click phishing links, reuse passwords, and plug in unknown USB drives. Culture and training are technical controls too."
+    quote: "Keep your eyes on the stars, and your feet on the ground.",
+    author: "Theodore Roosevelt",
+    role: "26th President of the United States",
+    context: "Dream about building something impactful — but then sit down and write the code. Ambition without execution is just daydreaming. The combination of high goals and grounded daily effort is where careers are made."
   },
   {
-    quote: "To protect against an adversary you don't understand is to not protect at all.",
-    author: "Richard Clarke",
-    role: "Former US National Coordinator for Security",
-    context: "Threat intelligence — understanding who attacks you, with what tools, and toward what goal — is the foundation of proportionate defense. Generic defenses fail against targeted, sophisticated adversaries."
+    quote: "With the new day comes new strength and new thoughts.",
+    author: "Eleanor Roosevelt",
+    role: "Former First Lady of the United States",
+    context: "The bug that defeated you yesterday is solvable today. The concept that confused you last week is clearer now. Every day you show up, you are a slightly better engineer than you were the day before."
   },
   {
-    quote: "Information security is ultimately about trust — trust in the people, processes, and technologies that protect our data.",
-    author: "Whitfield Diffie",
-    role: "Co-inventor of Public Key Cryptography",
-    context: "Public-key infrastructure, certificate authorities, and zero-knowledge proofs are all mechanisms for establishing trust without prior relationships. Understanding trust models is central to designing secure systems."
+    quote: "You don't have to be great to start, but you have to start to be great.",
+    author: "Zig Ziglar",
+    role: "Author & Motivational Speaker",
+    context: "No one's first project is impressive. No one's first blog post goes viral. Greatness is built iteratively — through every imperfect thing you put out into the world and then made slightly better."
   },
   {
-    quote: "The most dangerous phrase in the language is, 'We've always done it this way.'",
-    author: "Grace Hopper",
-    role: "Computer Science Pioneer, COBOL Creator",
-    context: "Legacy systems, inherited configurations, and outdated protocols persist in production because change is hard. Security debt accumulates silently. Grace Hopper's warning applies as much to infrastructure as it does to culture."
+    quote: "The harder the conflict, the greater the triumph.",
+    author: "Thomas Paine",
+    role: "Political Activist & Philosopher",
+    context: "The interview that almost broke you, the system design problem that took three weeks to understand, the deployment that failed before it worked — the harder the battle, the more the victory means."
   },
   {
-    quote: "Show me a secure system and I'll show you an unusable one.",
-    author: "Gene Spafford",
-    role: "Cybersecurity Pioneer, Purdue University",
-    context: "Security and usability exist in permanent tension. Zero-trust is more secure but harder to use. Strong passwords are safer but less memorable. The engineer's job is to find the right equilibrium for their threat model."
+    quote: "Energy and persistence conquer all things.",
+    author: "Benjamin Franklin",
+    role: "Founding Father, Inventor, Statesman",
+    context: "Talent is common. Intelligence is common. What is rare is the relentless daily energy to keep building, keep writing, keep learning — even when the results are invisible. That persistence is your greatest asset."
+  },
+  {
+    quote: "Either write something worth reading or do something worth writing.",
+    author: "Benjamin Franklin",
+    role: "Founding Father, Inventor, Statesman",
+    context: "Build in public. Write what you learn. Ship what you build. The act of documenting your journey — here, in this space — makes your work worth more than the work itself."
   },
 ];
 
