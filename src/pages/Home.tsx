@@ -59,20 +59,20 @@ export const Home: React.FC = () => {
       </div>
 
       {/* Curated Daily Tech Thought */}
-      <div className="bg-zinc-100/40 dark:bg-zinc-900/10 border border-zinc-200/50 dark:border-zinc-850/60 rounded-3xl p-6 sm:p-8 max-w-3xl mx-auto space-y-4 shadow-sm relative overflow-hidden">
+      <div className="bg-zinc-100/40 dark:bg-zinc-900/10 border border-zinc-200/50 dark:border-zinc-850/60 rounded-2xl p-4 sm:p-5 max-w-3xl mx-auto space-y-3 shadow-sm relative overflow-hidden">
         <div className="absolute top-0 right-0 p-3 opacity-[0.03] dark:opacity-[0.05] select-none pointer-events-none">
-          <BrainCircuit className="h-32 w-32 text-indigo-500" />
+          <BrainCircuit className="h-20 w-20 text-indigo-500" />
         </div>
-        
+
         <div className="flex items-center gap-2 text-[10px] font-mono font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest">
-          <Zap className="h-3.5 w-3.5 text-indigo-500 animate-pulse" />
+          <Zap className="h-3 w-3 text-indigo-500 animate-pulse" />
           <span>Daily Tech Philosophical Insight</span>
           <span className="h-1 w-1 rounded-full bg-zinc-300 dark:bg-zinc-700"></span>
           <span>Today</span>
         </div>
 
-        <div className="space-y-2.5">
-          <p className="text-lg sm:text-xl font-serif text-zinc-800 dark:text-white leading-relaxed font-medium italic">
+        <div className="space-y-1.5">
+          <p className="text-base font-serif text-zinc-800 dark:text-white leading-relaxed font-medium italic">
             "{dailyThought.quote}"
           </p>
           <div className="flex flex-wrap items-baseline gap-1.5 text-xs">
@@ -81,9 +81,44 @@ export const Home: React.FC = () => {
           </div>
         </div>
 
-        <p className="text-xs text-zinc-500 dark:text-zinc-300 leading-relaxed font-sans max-w-2xl border-t border-zinc-200/50 dark:border-zinc-800/40 pt-3.5">
+        <p className="text-[11px] text-zinc-500 dark:text-zinc-300 leading-relaxed font-sans max-w-2xl border-t border-zinc-200/50 dark:border-zinc-800/40 pt-2.5">
           {dailyThought.context}
         </p>
+      </div>
+
+      {/* Recent Notes Grid Panel */}
+      <div className="space-y-4 pt-4">
+        <div className="flex items-center justify-between border-b border-zinc-100 dark:border-zinc-800 pb-2">
+          <h2 className="text-xs font-mono font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest flex items-center gap-2">
+            <Hash className="h-4 w-4 text-indigo-500" />
+            <span>Recent Notes & Publications</span>
+          </h2>
+
+          <Link
+            to="/search"
+            className="text-xs text-indigo-500 hover:underline font-semibold font-mono flex items-center gap-1"
+          >
+            <span>Fuzzy query notes</span>
+            <ArrowRight className="h-3 w-3" />
+          </Link>
+        </div>
+
+        {recentPublished.length === 0 ? (
+          <div className="text-center py-12 border border-dashed border-zinc-300 dark:border-zinc-700 rounded-xl max-w-md mx-auto">
+            <p className="text-xs text-zinc-500 font-semibold font-mono">No published notes discovered in garden yet.</p>
+            {isAdmin && (
+              <Link to="/admin" className="text-xs text-indigo-500 hover:underline font-bold mt-2 inline-block">
+                Create standard note draft
+              </Link>
+            )}
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {recentPublished.map((post) => (
+              <PostCard key={post.id} post={post} sections={sections} />
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Primary Sections Bento Layout Panel */}
@@ -167,41 +202,6 @@ export const Home: React.FC = () => {
               <span>Load Knowledge Graph</span>
               <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-0.5 transition-transform" />
             </button>
-          </div>
-        )}
-      </div>
-
-      {/* Recent Notes Grid Panel */}
-      <div className="space-y-4 pt-4">
-        <div className="flex items-center justify-between border-b border-zinc-100 dark:border-zinc-800 pb-2">
-          <h2 className="text-xs font-mono font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest flex items-center gap-2">
-            <Hash className="h-4 w-4 text-indigo-500" />
-            <span>Recent Notes & Publications</span>
-          </h2>
-
-          <Link
-            to="/search"
-            className="text-xs text-indigo-500 hover:underline font-semibold font-mono flex items-center gap-1"
-          >
-            <span>Fuzzy query notes</span>
-            <ArrowRight className="h-3 w-3" />
-          </Link>
-        </div>
-
-        {recentPublished.length === 0 ? (
-          <div className="text-center py-12 border border-dashed border-zinc-300 dark:border-zinc-700 rounded-xl max-w-md mx-auto">
-            <p className="text-xs text-zinc-500 font-semibold font-mono">No published notes discovered in garden yet.</p>
-            {isAdmin && (
-              <Link to="/admin" className="text-xs text-indigo-500 hover:underline font-bold mt-2 inline-block">
-                Create standard note draft
-              </Link>
-            )}
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {recentPublished.map((post) => (
-              <PostCard key={post.id} post={post} sections={sections} />
-            ))}
           </div>
         )}
       </div>
