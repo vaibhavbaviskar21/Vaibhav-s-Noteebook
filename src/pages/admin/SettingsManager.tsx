@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Save, RotateCw, Settings, Database, MessageSquare, Github, Linkedin, Instagram, Code, Code2, Twitter } from "lucide-react";
+import { ArrowLeft, Save, RotateCw, Settings, Database, MessageSquare, Github, Linkedin, Globe, Code, Code2, Twitter } from "lucide-react";
 import { useApp } from "../../lib/AppContext";
 import { SiteSettings } from "../../types";
 
@@ -13,7 +13,7 @@ export const SettingsManager: React.FC = () => {
   const [twitter, setTwitter] = useState("");
   const [github, setGithub] = useState("");
   const [linkedin, setLinkedin] = useState("");
-  const [instagram, setInstagram] = useState("");
+  const [portfolio, setPortfolio] = useState("");
   const [leetcode, setLeetcode] = useState("");
   const [codolio, setCodolio] = useState("");
   const [isSaving, setIsSaving] = useState(false);
@@ -29,7 +29,7 @@ export const SettingsManager: React.FC = () => {
       setTwitter(settings.twitter || "");
       setGithub(settings.github || "");
       setLinkedin(settings.linkedin || "");
-      setInstagram(settings.instagram || "");
+      setPortfolio(settings.portfolio || "");
       setLeetcode(settings.leetcode || "");
       setCodolio(settings.codolio || "");
     }
@@ -54,7 +54,7 @@ export const SettingsManager: React.FC = () => {
         twitter: twitter.trim(),
         github: github.trim(),
         linkedin: linkedin.trim(),
-        instagram: instagram.trim(),
+        portfolio: portfolio.trim(),
         leetcode: leetcode.trim(),
         codolio: codolio.trim(),
       });
@@ -168,7 +168,7 @@ export const SettingsManager: React.FC = () => {
                 { label: "GitHub", value: github, setter: setGithub, placeholder: "https://github.com/yourusername", icon: <Github className="h-3.5 w-3.5" /> },
                 { label: "LinkedIn", value: linkedin, setter: setLinkedin, placeholder: "https://linkedin.com/in/yourusername", icon: <Linkedin className="h-3.5 w-3.5" /> },
                 { label: "Twitter / X", value: twitter, setter: setTwitter, placeholder: "https://x.com/yourusername", icon: <Twitter className="h-3.5 w-3.5" /> },
-                { label: "Instagram", value: instagram, setter: setInstagram, placeholder: "https://instagram.com/yourusername", icon: <Instagram className="h-3.5 w-3.5" /> },
+                { label: "Portfolio", value: portfolio, setter: setPortfolio, placeholder: "https://yourportfolio.com", icon: <Globe className="h-3.5 w-3.5" /> },
                 { label: "LeetCode", value: leetcode, setter: setLeetcode, placeholder: "https://leetcode.com/yourusername", icon: <Code className="h-3.5 w-3.5" /> },
                 { label: "Codolio", value: codolio, setter: setCodolio, placeholder: "https://codolio.com/profile/yourusername", icon: <Code2 className="h-3.5 w-3.5" /> },
               ].map(({ label, value, setter, placeholder, icon }) => (

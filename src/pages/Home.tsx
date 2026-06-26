@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, BookOpen, BrainCircuit, Hash, Network, Zap, Github, Linkedin, Twitter, Instagram, Code, Code2, ExternalLink, CodeSquare } from "lucide-react";
+import { ArrowRight, BookOpen, BrainCircuit, Hash, Network, Zap, Github, Linkedin, Twitter, Code, Code2, ExternalLink, CodeSquare } from "lucide-react";
 import { useApp } from "../lib/AppContext";
 import { PostCard } from "../components/posts/PostCard";
 import { updateSEOHeaders } from "../lib/seo";
