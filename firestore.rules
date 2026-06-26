@@ -1,0 +1,72 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Global safety net (Default Deny)
+    match /{document=**} {
+      allow read, write: if false;
+    }
+    
+    // Global helper functions
+    function incoming() {
+      return request.resource.data;
+    }
+
+    // Sections collection
+    match /sections/{sectionId} {
+      allow read: if true;
+      allow create, update: if isValidSection(incoming());
+      allow delete: if true;
+    }
+
+    function isValidSection(data) {
+      return data.id is string && data.id.size() <= 128 &&
+             data.name is string && data.name.size() <= 100 &&
+             data.slug is string && data.slug.size() <= 100 &&
+             data.icon is string && data.icon.size() <= 10 &&
+             data.order is int;
+    }
+
+    // Folders collection
+    match /folders/{folderId} {
+      allow read: if true;
+      allow create, update: if isValidFolder(incoming());
+      allow delete: if true;
+    }
+
+    function isValidFolder(data) {
+      return data.id is string && data.id.size() <= 128 &&
+             data.sectionId is string && data.sectionId.size() <= 128 &&
+             data.name is string && data.name.size() <= 100 &&
+             data.order is int;
+    }
+
+    // Posts collection
+    match /posts/{postId} {
+      allow read: if true;
+      allow create, update: if isValidPost(incoming());
+      allow delete: if true;
+    }
+
+    function isValidPost(data) {
+      return data.id is string && data.id.size() <= 128 &&
+             data.sectionId is string && data.sectionId.size() <= 128 &&
+             data.title is string && data.title.size() <= 200 &&
+             data.slug is string && data.slug.size() <= 200 &&
+             data.status is string && (data.status == "draft" || data.status == "published" || data.status == "scheduled" || data.status == "private");
+    }
+
+    // Settings collection
+    match /settings/{settingId} {
+      allow read: if true;
+      allow create, update: if isValidSetting(incoming());
+      allow delete: if true;
+    }
+
+    function isValidSetting(data) {
+      return data.id is string && data.id.size() <= 128 &&
+             data.title is string && data.title.size() <= 100 &&
+             data.tagline is string && data.tagline.size() <= 200;
+    }
+  }
+}

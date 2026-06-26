@@ -1,0 +1,6 @@
+{
+  "name": "Personal Notebook and Blogging Platform",
+  "description": "A private knowledge base and digital garden where personal notebooks meet a streamlined blog, with interactive tree folders, mind maps, and fuzzy searches.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

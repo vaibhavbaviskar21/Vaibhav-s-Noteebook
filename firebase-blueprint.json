@@ -1,0 +1,85 @@
+{
+  "entities": {
+    "section": {
+      "title": "Section",
+      "description": "Group of related folders and posts, like projects or blogs.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Section unique ID" },
+        "name": { "type": "string", "description": "Display name of the section" },
+        "slug": { "type": "string", "description": "Kebab case identifier" },
+        "icon": { "type": "string", "description": "Emoji character" },
+        "order": { "type": "integer", "description": "Reorder priority rank" }
+      },
+      "required": ["id", "name", "slug", "icon", "order"]
+    },
+    "folder": {
+      "title": "Folder",
+      "description": "Hierarchical container for posts.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique folder ID" },
+        "sectionId": { "type": "string", "description": "Owner section ID" },
+        "parentFolderId": { "type": "string", "description": "Parent folder ID or null/empty" },
+        "name": { "type": "string", "description": "Folder display name" },
+        "order": { "type": "integer", "description": "Reorder priority rank within parent" }
+      },
+      "required": ["id", "sectionId", "name", "order"]
+    },
+    "post": {
+      "title": "Post",
+      "description": "Markdown text note or blog article.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique post ID" },
+        "sectionId": { "type": "string", "description": "Associated section ID" },
+        "folderId": { "type": "string", "description": "Associated folder ID or empty/null" },
+        "title": { "type": "string", "description": "Post title" },
+        "slug": { "type": "string", "description": "Unique URL slug" },
+        "content": { "type": "string", "description": "Raw markdown body content" },
+        "excerpt": { "type": "string", "description": "Short description summary" },
+        "tags": { "type": "array", "description": "List of tag labels" },
+        "status": { "type": "string", "enum": ["draft", "published", "scheduled"], "description": "Publish state" },
+        "scheduledAt": { "type": "string", "format": "date-time", "description": "Timestamp when scheduled publication triggers" },
+        "publishedAt": { "type": "string", "format": "date-time", "description": "Timestamp when published" },
+        "coverImage": { "type": "string", "description": "Firebase Storage download url for hero cover" },
+        "links": { "type": "array", "description": "Array of linked note post IDs" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Creation timestamp" },
+        "updatedAt": { "type": "string", "format": "date-time", "description": "Last update timestamp" }
+      },
+      "required": ["id", "sectionId", "title", "slug", "content", "excerpt", "tags", "status", "links", "createdAt", "updatedAt"]
+    },
+    "setting": {
+      "title": "Setting",
+      "description": "Global settings for Vaibhav's Brain notebook.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Document ID, usually 'site'" },
+        "title": { "type": "string", "description": "Site title brand name" },
+        "tagline": { "type": "string", "description": "Site slogan tagline description" },
+        "twitter": { "type": "string", "description": "Twitter social link" },
+        "github": { "type": "string", "description": "GitHub profile link" },
+        "linkedin": { "type": "string", "description": "LinkedIn profile link" }
+      },
+      "required": ["id", "title", "tagline"]
+    }
+  },
+  "firestore": {
+    "sections/{sectionId}": {
+      "schema": "section",
+      "description": "Primary top-level sections in the platform"
+    },
+    "folders/{folderId}": {
+      "schema": "folder",
+      "description": "Hierarchical folders within sections"
+    },
+    "posts/{postId}": {
+      "schema": "post",
+      "description": "Posts, notebooks, or wiki entries containing markdown"
+    },
+    "settings/{settingId}": {
+      "schema": "setting",
+      "description": "Global styling and metadata settings configuration"
+    }
+  }
+}
