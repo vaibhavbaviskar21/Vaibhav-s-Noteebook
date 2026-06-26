@@ -72,16 +72,16 @@ export const Home: React.FC = () => {
         </div>
 
         <div className="space-y-2.5">
-          <p className="text-lg sm:text-xl font-serif text-zinc-800 dark:text-zinc-350 leading-relaxed font-medium italic">
+          <p className="text-lg sm:text-xl font-serif text-zinc-800 dark:text-white leading-relaxed font-medium italic">
             "{dailyThought.quote}"
           </p>
           <div className="flex flex-wrap items-baseline gap-1.5 text-xs">
-            <span className="font-bold text-zinc-900 dark:text-zinc-250">— {dailyThought.author}</span>
-            <span className="text-zinc-400 dark:text-zinc-550 text-[11px]">({dailyThought.role})</span>
+            <span className="font-bold text-zinc-900 dark:text-white">— {dailyThought.author}</span>
+            <span className="text-zinc-400 dark:text-zinc-400 text-[11px]">({dailyThought.role})</span>
           </div>
         </div>
 
-        <p className="text-xs text-zinc-500 dark:text-zinc-450 leading-relaxed font-sans max-w-2xl border-t border-zinc-200/50 dark:border-zinc-800/40 pt-3.5">
+        <p className="text-xs text-zinc-500 dark:text-zinc-300 leading-relaxed font-sans max-w-2xl border-t border-zinc-200/50 dark:border-zinc-800/40 pt-3.5">
           {dailyThought.context}
         </p>
       </div>
