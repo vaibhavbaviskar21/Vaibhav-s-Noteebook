@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, BookOpen, BrainCircuit, Hash, Network, Zap } from "lucide-react";
+import { ArrowRight, BookOpen, BrainCircuit, Hash, Network, Zap, Github, Linkedin, Twitter, Instagram, Code, Code2, ExternalLink, CodeSquare } from "lucide-react";
 import { useApp } from "../lib/AppContext";
 import { PostCard } from "../components/posts/PostCard";
 import { updateSEOHeaders } from "../lib/seo";
@@ -41,24 +41,43 @@ export const Home: React.FC = () => {
   }
 
   return (
-    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 space-y-12 animate-fade-in font-sans select-none">
-      {/* Sleek Minimal Welcome Header */}
-      <div className="text-center max-w-2xl mx-auto space-y-3.5 py-6">
-        <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-indigo-50 dark:bg-indigo-950/40 border border-indigo-150 dark:border-indigo-900 border-indigo-100 text-[11px] font-bold font-mono text-indigo-500 uppercase tracking-widest mt-1">
-          <BrainCircuit className="h-4 w-4 text-indigo-500" />
-          <span>VAIBHAV'S KNOWLEDGE BACKPLANE</span>
-        </div>
-        
+    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 space-y-6 animate-fade-in font-sans select-none">
+      {/* Welcome Header + Socials */}
+      <div className="text-center max-w-2xl mx-auto space-y-4 py-4">
         <h1 className="text-4xl sm:text-5xl font-extrabold font-sans tracking-tight text-zinc-900 dark:text-white">
           {settings.title || "Vaibhav's Brain"}
         </h1>
-        
+
         <p className="text-base text-zinc-600 dark:text-zinc-400 font-serif leading-relaxed italic">
-          {settings.tagline || "Where personal notebooks meet a streamlined blogging digital garden."}
+          {settings.tagline || "A personal space to write, think and build in public."}
         </p>
+
+        {/* Socials — icon-only rounded squares, centred */}
+        {(settings.github || settings.linkedin || settings.twitter || settings.portfolio || settings.leetcode || settings.codolio) && (
+          <div className="flex flex-wrap items-center justify-center gap-2.5 pt-1">
+            {[
+              settings.github    && { href: settings.github,    label: "GitHub",      icon: <Github className="h-5 w-5" />,    color: "hover:border-zinc-600 hover:bg-zinc-900 hover:text-white dark:hover:bg-zinc-800" },
+              settings.linkedin  && { href: settings.linkedin,  label: "LinkedIn",    icon: <Linkedin className="h-5 w-5" />,  color: "hover:border-[#0A66C2] hover:bg-[#0A66C2]/10 hover:text-[#0A66C2]" },
+              settings.twitter   && { href: settings.twitter,   label: "Twitter / X", icon: <Twitter className="h-5 w-5" />,   color: "hover:border-sky-500 hover:bg-sky-500/10 hover:text-sky-500" },
+              settings.portfolio && { href: settings.portfolio, label: "Portfolio",   icon: <CodeSquare className="h-5 w-5" />, color: "hover:border-pink-500 hover:bg-pink-500/10 hover:text-pink-500" },
+              settings.leetcode  && { href: settings.leetcode,  label: "LeetCode",    icon: <Code className="h-5 w-5" />,      color: "hover:border-orange-400 hover:bg-orange-400/10 hover:text-orange-400" },
+              settings.codolio   && { href: settings.codolio,   label: "Codolio",     icon: <Code2 className="h-5 w-5" />,     color: "hover:border-blue-500 hover:bg-blue-500/10 hover:text-blue-500" },
+            ].filter(Boolean).map((social: any) => (
+              <a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={social.label}
+                className={`flex items-center justify-center w-10 h-10 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white/60 dark:bg-zinc-900/30 text-zinc-500 dark:text-zinc-400 transition-all duration-200 shadow-sm ${social.color}`}
+              >
+                {social.icon}
+              </a>
+            ))}
+          </div>
+        )}
       </div>
 
-      {/* Curated Daily Tech Thought */}
       <div className="bg-zinc-100/40 dark:bg-zinc-900/10 border border-zinc-200/50 dark:border-zinc-850/60 rounded-2xl p-4 sm:p-5 max-w-3xl mx-auto space-y-3 shadow-sm relative overflow-hidden">
         <div className="absolute top-0 right-0 p-3 opacity-[0.03] dark:opacity-[0.05] select-none pointer-events-none">
           <BrainCircuit className="h-20 w-20 text-indigo-500" />

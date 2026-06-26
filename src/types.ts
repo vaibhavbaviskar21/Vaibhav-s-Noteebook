@@ -44,6 +44,9 @@ export interface SiteSettings {
   twitter?: string;
   github?: string;
   linkedin?: string;
+  portfolio?: string;
+  leetcode?: string;
+  codolio?: string;
 }
 
 export interface DragItem {

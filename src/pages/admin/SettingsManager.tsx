@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Save, Eye, CheckCircle, RotateCw, Settings, Database, MessageSquare } from "lucide-react";
+import { ArrowLeft, Save, RotateCw, Settings, Database, MessageSquare, Github, Linkedin, Instagram, Code, Code2, Twitter } from "lucide-react";
 import { useApp } from "../../lib/AppContext";
 import { SiteSettings } from "../../types";
 
@@ -10,6 +10,12 @@ export const SettingsManager: React.FC = () => {
   const [title, setTitle] = useState("");
   const [tagline, setTagline] = useState("");
   const [bio, setBio] = useState("");
+  const [twitter, setTwitter] = useState("");
+  const [github, setGithub] = useState("");
+  const [linkedin, setLinkedin] = useState("");
+  const [instagram, setInstagram] = useState("");
+  const [leetcode, setLeetcode] = useState("");
+  const [codolio, setCodolio] = useState("");
   const [isSaving, setIsSaving] = useState(false);
   const [isSeeding, setIsSeeding] = useState(false);
   const [saveSuccess, setSaveSuccess] = useState(false);
@@ -20,6 +26,12 @@ export const SettingsManager: React.FC = () => {
       setTitle(settings.title || "Vaibhav's Brain");
       setTagline(settings.tagline || "Where personal notebooks meet a streamlined blogging digital garden.");
       setBio(settings.bio || "Sovereign knowledge backplane tracking computer science, research, project logs, and CTFs.");
+      setTwitter(settings.twitter || "");
+      setGithub(settings.github || "");
+      setLinkedin(settings.linkedin || "");
+      setInstagram(settings.instagram || "");
+      setLeetcode(settings.leetcode || "");
+      setCodolio(settings.codolio || "");
     }
   }, [settings]);
 
@@ -35,10 +47,16 @@ export const SettingsManager: React.FC = () => {
 
     try {
       await updateSiteSettings({
-        id: "global",
+        id: "site",
         title: title.trim(),
         tagline: tagline.trim(),
         bio: bio.trim(),
+        twitter: twitter.trim(),
+        github: github.trim(),
+        linkedin: linkedin.trim(),
+        instagram: instagram.trim(),
+        leetcode: leetcode.trim(),
+        codolio: codolio.trim(),
       });
       setSaveSuccess(true);
       setTimeout(() => setSaveSuccess(false), 3000);
@@ -140,6 +158,31 @@ export const SettingsManager: React.FC = () => {
                 rows={4}
                 className="w-full text-xs font-medium rounded-lg border border-zinc-200 dark:border-zinc-805 bg-white dark:bg-zinc-900 px-3 py-2 text-zinc-900 dark:text-zinc-100 focus:ring-1 focus:ring-indigo-550 resize-y"
               />
+            </div>
+
+            {/* Social Links */}
+            <div className="pt-2 border-t border-zinc-100 dark:border-zinc-800 space-y-3">
+              <p className="font-bold text-zinc-500 text-[11px] uppercase tracking-widest">Social Links (full URLs)</p>
+
+              {[
+                { label: "GitHub", value: github, setter: setGithub, placeholder: "https://github.com/yourusername", icon: <Github className="h-3.5 w-3.5" /> },
+                { label: "LinkedIn", value: linkedin, setter: setLinkedin, placeholder: "https://linkedin.com/in/yourusername", icon: <Linkedin className="h-3.5 w-3.5" /> },
+                { label: "Twitter / X", value: twitter, setter: setTwitter, placeholder: "https://x.com/yourusername", icon: <Twitter className="h-3.5 w-3.5" /> },
+                { label: "Instagram", value: instagram, setter: setInstagram, placeholder: "https://instagram.com/yourusername", icon: <Instagram className="h-3.5 w-3.5" /> },
+                { label: "LeetCode", value: leetcode, setter: setLeetcode, placeholder: "https://leetcode.com/yourusername", icon: <Code className="h-3.5 w-3.5" /> },
+                { label: "Codolio", value: codolio, setter: setCodolio, placeholder: "https://codolio.com/profile/yourusername", icon: <Code2 className="h-3.5 w-3.5" /> },
+              ].map(({ label, value, setter, placeholder, icon }) => (
+                <div key={label} className="space-y-0.5">
+                  <label className="font-semibold text-zinc-400 dark:text-zinc-500 flex items-center gap-1.5">{icon}{label}</label>
+                  <input
+                    type="url"
+                    placeholder={placeholder}
+                    value={value}
+                    onChange={(e) => setter(e.target.value)}
+                    className="w-full text-xs font-medium rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 px-3 py-2 text-zinc-900 dark:text-zinc-100 focus:ring-1 focus:ring-indigo-500"
+                  />
+                </div>
+              ))}
             </div>
           </div>
 
